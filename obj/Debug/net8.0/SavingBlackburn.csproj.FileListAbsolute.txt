@@ -1,0 +1,14 @@
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.AssemblyInfoInputs.cache
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.AssemblyInfo.cs
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.csproj.CoreCompileInputs.cache
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\bin\Debug\net8.0\SavingBlackburn.exe
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\bin\Debug\net8.0\SavingBlackburn.deps.json
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\bin\Debug\net8.0\SavingBlackburn.runtimeconfig.json
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\bin\Debug\net8.0\SavingBlackburn.dll
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\bin\Debug\net8.0\SavingBlackburn.pdb
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.dll
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\refint\SavingBlackburn.dll
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.pdb
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.genruntimeconfig.cache
+C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\ref\SavingBlackburn.dll
