@@ -9,6 +9,7 @@ class Room
     public Inventory Inventory;
     public Player Player;
     public int RoomType {get; set;}
+    public Trader? Trader {get; set;}
     public Room(Player player)
     {
         Random random= new();
@@ -27,8 +28,10 @@ class Room
         else if (RoomType == 1)
         {
             //Treasure
-            Console.WriteLine("The next room has a chest of gold");
+            Console.WriteLine("The next room is peaceful and bright");
+            Console.WriteLine("You find a small chest of gold and feel your wounds start to close.");
             Inventory.Gold += 20;
+            Player.CharacterClass.Health += 10;
         }
         else if (RoomType == 2)
         {
@@ -44,6 +47,7 @@ class Room
         else if (RoomType == 4)
         {
             //Trader
+            Trader = new Trader(Player);
         }
         else 
         {

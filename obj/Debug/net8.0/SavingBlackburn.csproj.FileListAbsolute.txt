@@ -12,3 +12,4 @@ C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\refint\Savi
 C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.pdb
 C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.genruntimeconfig.cache
 C:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\ref\SavingBlackburn.dll
+c:\Users\jhBOO\BYUI\Projects\CSE310\SavingBlackburn\obj\Debug\net8.0\SavingBlackburn.sourcelink.json

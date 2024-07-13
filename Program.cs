@@ -50,53 +50,95 @@ class Program
                 Console.WriteLine("Please type 0 for warrior, 1 for thief, or 2 for mage");
         }
         Player player = new(name, new CharacterClass(classChoice));
+        //creates new player, then adds a basic wand for mages or shortsword for rogues and warriors
+        if (classChoice == 2)
+            player.Inventory.Items.Add(new Weapon(12));
+        else
+            player.Inventory.Items.Add(new Weapon(7));
         //shop
         //rooms
         bool victory = false;
+        int roomChoice;
         while (!victory)
         {
-            Room room = new(player);
-            if (room.RoomType == 0 || room.RoomType == 3)
+            Console.WriteLine("");
+            Console.WriteLine("You can view your current stats, inventory, or go to the next room.");
+            Console.WriteLine("   1. Next room.");
+            Console.WriteLine("   2. View current stats.");
+            Console.WriteLine("   3. View inventory.");
+            Console.WriteLine("   0. Quit.");
+            Console.WriteLine("");
+            Console.Write("Please enter a number 0-3 for your choice: ");
+            if (int.TryParse(Console.ReadLine(), out roomChoice))
             {
-                Console.WriteLine($"You walk into a room and youre not alone! You see a {room.Creatures[room.Creatures.Count - 1].CreatureName}");
-                foreach (Creature creature in room.Creatures)
+                Console.WriteLine("");
+                switch (roomChoice)
                 {
-                    while (creature.CreatureHP > 0 && player.CharacterClass.Health > 0)
-                    {
+                    case 0:
                         Console.WriteLine("");
-                        Console.WriteLine($"The {creature.CreatureName} has {creature.CreatureHP} health left.");
-                        Console.WriteLine("You both attack.");
-                        Attack(player, creature);
-                        Console.WriteLine("");
-                        Console.WriteLine($"You have {player.CharacterClass.Health} health left");
-                    }
-                    if (player.CharacterClass.Health <= 0)
+                        Console.WriteLine("Exiting Game...");
+                        victory = true;
+                        break;
+                    case 1:
+                        Room room = new(player);
+                        if (room.RoomType == 0 || room.RoomType == 3)
                         {
-                            victory = true;
-                            Console.WriteLine("");
-                            Console.WriteLine("You were killed and another corpse is added to the tomb of horrors.");
-                            break;
+                            Console.WriteLine($"You walk into a room and youre not alone! You see a {room.Creatures[room.Creatures.Count - 1].CreatureName}");
+                            foreach (Creature creature in room.Creatures)
+                            {
+                                while (creature.CreatureHP > 0 && player.CharacterClass.Health > 0)
+                                {
+                                    Console.WriteLine("");
+                                    Console.WriteLine($"The {creature.CreatureName} has {creature.CreatureHP} health left.");
+                                    Console.WriteLine("You both attack.");
+                                    Attack(player, creature);
+                                    Console.WriteLine("");
+                                    Console.WriteLine($"You have {player.CharacterClass.Health} health left");
+                                }
+                                if (player.CharacterClass.Health <= 0)
+                                {
+                                    victory = true;
+                                    Console.WriteLine("");
+                                    Console.WriteLine("You were killed and another corpse is added to the tomb of horrors.");
+                                    break;
+                                }
+                                else if (creature.CreatureHP <= 0)
+                                {
+                                    Console.WriteLine("");
+                                    Console.WriteLine("Congrats, you killed the monster.");
+                                    if (creature.CreatureID > 6)
+                                    {
+                                        Console.WriteLine($"You recieve a {creature.CreatureName} key");
+                                        if (creature.CreatureID == 7)
+                                            player.Inventory.Items.Add(new Key(4));
+                                        else if (creature.CreatureID == 8)
+                                            player.Inventory.Items.Add(new Key(5));
+                                        else
+                                            player.Inventory.Items.Add(new Key(6));
+                                    }
+                                }
+                            }
                         }
-                    else if (creature.CreatureHP <= 0)
-                    {
-                        Console.WriteLine("");
-                        Console.WriteLine("Congrats, you killed the monster.");
-                        if (creature.CreatureID > 6)
+                        else if (room.RoomType == 4)
                         {
-                            Console.WriteLine($"You recieve a {creature.CreatureName} key");
-                            if (creature.CreatureID == 7)
-                                player.Inventory.Items.Add(new Key(4));
-                            else if (creature.CreatureID == 8)
-                                player.Inventory.Items.Add(new Key(5));
-                            else
-                                player.Inventory.Items.Add(new Key(6));
+                            room.Trader.MakePurchase();
                         }
-                    }
+                        else 
+                            victory = room.Victory;
+                        break;
+                    case 2:
+                    //view stats
+                        player.CharacterClass.GetStats();
+                        break;
+                    case 3:
+                    //view inventory
+                        player.Inventory.GetInventory();
+                        break;
+                    default:
+                        Console.Write("Invalid choice. Please enter a number 0-3: ");
+                        break;
                 }
             }
-            else 
-                victory = room.Victory;
         }
-
     }
 }

@@ -1,7 +1,7 @@
 class Weapon : Item
 {
     public int WeaponID {get;set;}
-    //7= shortsword, 8 = mace, 9 = longsword, 10 = dagger, 11 = bow&arrows, 12 = wand of sparking, 13 = fire staff
+    //7= shortsword, 8 = mace, 9 = longsword, 10 = dagger, 11 = bow&arrows, 12 = wand of sparking, 13 = fire staff, 14 = lightning orb
     public string WeaponName {get;set;}
     public int Damage {get;set;}
     public int Category {get;set;}
@@ -37,7 +37,7 @@ class Weapon : Item
         else if (WeaponID == 11)
         {
             WeaponName = "Bow and Arrows";
-            Damage = 6;
+            Damage = 7;
             Category = 1;
         }
         else if (WeaponID == 12)
@@ -46,10 +46,16 @@ class Weapon : Item
             Damage = 2;
             Category = 2;
         }
-        else
+        else if(WeaponID == 13)
         {
             WeaponName = "Fire Staff";
             Damage = 6;
+            Category = 2;
+        }
+        else
+        {
+            WeaponName = "Lightning Orb";
+            Damage = 9;
             Category = 2;
         }
     }

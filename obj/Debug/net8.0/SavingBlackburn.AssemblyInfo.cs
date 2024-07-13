@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SavingBlackburn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+923327bdf695bdc6bebaa66415bc1680ff82226e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SavingBlackburn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SavingBlackburn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
